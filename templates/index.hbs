@@ -1,11 +1,15 @@
+<h2 class="text-center mb-4">Liste des personnages Marvel</h2>
 
-<div class="container-fluid m-2 p-5 bg-primary text-center">
-    <h1>Les Marvels</h1>
+<div class="row">
+    {{#each characters}}
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img src="{{imageUrl}}" class="card-img-top" alt="{{nom}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{nom}}</h5>
+                    <p class="card-text">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    {{/each}}
 </div>
-<div class="container m-2 p-5 bg-primary  text-center">
-    <h2>Mes comics</h2>
-
-</div>
-
-
-

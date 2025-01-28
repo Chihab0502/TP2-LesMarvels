@@ -13,9 +13,10 @@ const BASE_URL = "https://gateway.marvel.com/v1/public/characters";
 
 
 export const getData = async (url) => {
+
     const ts = Date.now().toString(); // Timestamp en millisecondes
-    const hash = getHash(PUBLIC_KEY, PRIVATE_KEY, ts);
-    const fullUrl = `${url}?ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}`;
+    const hash = await getHash(PUBLIC_KEY, PRIVATE_KEY, ts);
+    const fullUrl = `${BASE_URL}?ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}`;
 
     console.log("Requête envoyée à :", fullUrl); // Debugging
 
